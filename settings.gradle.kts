@@ -7,8 +7,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = "advancements_search"
-
 dependencyResolutionManagement {
     repositories {
         mavenLocal()
