@@ -1,15 +1,15 @@
 package io.github.diskria.advancements_search.client
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue
-import io.github.diskria.lapis.annotations.Env
 import io.github.diskria.lapis.annotations.KMixin
+import io.github.diskria.lapis.annotations.Side
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.client.gui.screens.advancements.AdvancementsScreen
 import org.spongepowered.asm.mixin.injection.At
 import org.spongepowered.asm.mixin.injection.Inject
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo
 
-@KMixin(Screen::class, Env.Client)
+@KMixin(Screen::class, Side.Client)
 class ScreenMixin {
 
     @Inject(method = ["resize"], at = [At(value = "HEAD")])

@@ -3,10 +3,10 @@ package io.github.diskria.advancements_search.client
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation
 import com.mojang.renderpearl.api.pipeline.RenderPipeline
-import io.github.diskria.lapis.annotations.Env
 import io.github.diskria.lapis.annotations.Extension
 import io.github.diskria.lapis.annotations.KMixin
 import io.github.diskria.lapis.annotations.KShadow
+import io.github.diskria.lapis.annotations.Side
 import net.minecraft.advancements.AdvancementNode
 import net.minecraft.client.gui.GuiGraphicsExtractor
 import net.minecraft.client.gui.screens.advancements.AdvancementWidget
@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo
 import javax.lang.model.element.Modifier.FINAL
 import javax.lang.model.element.Modifier.PUBLIC
 
-@KMixin(AdvancementWidget::class, Env.Client)
+@KMixin(AdvancementWidget::class, Side.Client)
 abstract class AdvancementWidgetMixin {
 
     @Extension
@@ -55,5 +55,5 @@ abstract class AdvancementWidgetMixin {
     }
 
     @KShadow(PUBLIC, FINAL)
-    abstract var advancementNode: AdvancementNode?
+    abstract val advancementNode: AdvancementNode?
 }

@@ -5,10 +5,10 @@ import com.llamalad7.mixinextras.injector.v2.WrapWithCondition
 import com.llamalad7.mixinextras.sugar.Local
 import com.mojang.blaze3d.platform.cursor.CursorTypes
 import com.mojang.renderpearl.api.pipeline.RenderPipeline
-import io.github.diskria.lapis.annotations.Env
 import io.github.diskria.lapis.annotations.Extension
 import io.github.diskria.lapis.annotations.KMixin
 import io.github.diskria.lapis.annotations.KShadow
+import io.github.diskria.lapis.annotations.Side
 import net.minecraft.client.gui.GuiGraphicsExtractor
 import net.minecraft.client.gui.screens.advancements.AdvancementTab
 import net.minecraft.client.gui.screens.advancements.AdvancementWidget
@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.Inject
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo
 import javax.lang.model.element.Modifier.*
 
-@KMixin(AdvancementTab::class, Env.Client)
+@KMixin(AdvancementTab::class, Side.Client)
 abstract class AdvancementTabMixin {
 
     @Extension
@@ -76,5 +76,5 @@ abstract class AdvancementTabMixin {
     abstract val screen: AdvancementsScreen
 
     @KShadow(PUBLIC)
-    abstract var hovered: AdvancementWidget?
+    abstract val hovered: AdvancementWidget?
 }

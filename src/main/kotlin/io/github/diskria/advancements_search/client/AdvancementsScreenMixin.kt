@@ -41,7 +41,7 @@ import kotlin.math.cos
 import kotlin.math.max
 import kotlin.math.sin
 
-@KMixin(AdvancementsScreen::class, Env.Client)
+@KMixin(AdvancementsScreen::class, Side.Client)
 abstract class AdvancementsScreenMixin(@Origin private val screen: AdvancementsScreen) {
 
     private val searchBox: EditBox by lazy {
