@@ -17,14 +17,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo
 import javax.lang.model.element.Modifier.FINAL
 import javax.lang.model.element.Modifier.PUBLIC
 
-@KMixin(AdvancementWidget::class, Side.Client)
+@KMixin<AdvancementWidget>(Side.Client)
 abstract class AdvancementWidgetMixin {
 
     @Extension
-    var isSearchResult = false
+    var isSearchResult: Boolean = false
 
     @Extension
-    var isFrameBlink = false
+    var isFrameBlink: Boolean = false
 
     @Inject(method = ["extractConnectivity"], at = [At(value = "HEAD")], cancellable = true)
     fun extractConnectivityHead(

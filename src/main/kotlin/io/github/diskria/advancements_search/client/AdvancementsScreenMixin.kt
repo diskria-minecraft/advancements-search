@@ -41,7 +41,7 @@ import kotlin.math.cos
 import kotlin.math.max
 import kotlin.math.sin
 
-@KMixin(AdvancementsScreen::class, Side.Client)
+@KMixin<AdvancementsScreen>(Side.Client)
 abstract class AdvancementsScreenMixin(@Origin private val screen: AdvancementsScreen) {
 
     private val searchBox: EditBox by lazy {
@@ -103,7 +103,6 @@ abstract class AdvancementsScreenMixin(@Origin private val screen: AdvancementsS
 
     private var searchResultsMaxColumns = 0
     private var searchResultsOriginX = 0
-
     private var isSearchActive = false
     private var treeWidth = 0
     private var treeHeight = 0
@@ -315,8 +314,8 @@ abstract class AdvancementsScreenMixin(@Origin private val screen: AdvancementsS
             /* textureWidth = */ 256,
             /* textureHeight = */ 256,
         )
-        searchBox.setX(fieldX + SEARCH_FIELD_TEXT_LEFT_OFFSET)
-        searchBox.setY(fieldY + SEARCH_FIELD_TEXT_LEFT_OFFSET)
+        searchBox.x = fieldX + SEARCH_FIELD_TEXT_LEFT_OFFSET
+        searchBox.y = fieldY + SEARCH_FIELD_TEXT_LEFT_OFFSET
         searchBox.extractRenderState(graphics, mouseX, mouseY, a)
         original.call(instance, graphics, mouseX, mouseY)
     }

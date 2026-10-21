@@ -20,8 +20,6 @@ loom {
 lapis {
     uniqueModPrefix = "$modId$"
     mixinConfig = file("src/main/resources/$modId.mixins.json")
-    nullableAnnotation = "org.jspecify.annotations.Nullable"
-    nonNullAnnotation = "org.jspecify.annotations.NonNull"
 }
 
 dependencies {
@@ -52,8 +50,7 @@ java {
 repositories {
     mavenLocal()
     mavenCentral()
-    maven("https://repo.spongepowered.org/repository/maven-public") {
-        name = "SpongePublic"
-        content { includeGroup("org.spongepowered") }
-    }
+
+    // TODO: Required for Lapis KSP.
+    maven("https://central.sonatype.com/repository/maven-snapshots/")
 }

@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At
 import org.spongepowered.asm.mixin.injection.Inject
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable
 
-@KMixin(ContainerEventHandler::class, Side.Client)
+@KMixin<ContainerEventHandler>(Side.Client)
 interface ContainerEventHandlerMixin {
 
     @Inject(method = ["charTyped"], at = [At(value = "HEAD")], cancellable = true)

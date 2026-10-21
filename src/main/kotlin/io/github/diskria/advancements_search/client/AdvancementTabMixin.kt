@@ -19,11 +19,11 @@ import org.spongepowered.asm.mixin.injection.Inject
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo
 import javax.lang.model.element.Modifier.*
 
-@KMixin(AdvancementTab::class, Side.Client)
+@KMixin<AdvancementTab>(Side.Client)
 abstract class AdvancementTabMixin {
 
     @Extension
-    var isSearchResults = false
+    var isSearchResults: Boolean = false
 
     @Inject(method = ["tick"], at = [At(value = "TAIL")])
     fun tickTail(relativeMouseX: Int, relativeMouseY: Int, callback: CallbackInfo) {

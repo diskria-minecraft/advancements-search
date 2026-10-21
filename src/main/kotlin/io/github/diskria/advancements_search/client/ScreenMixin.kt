@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At
 import org.spongepowered.asm.mixin.injection.Inject
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo
 
-@KMixin(Screen::class, Side.Client)
+@KMixin<Screen>(Side.Client)
 class ScreenMixin {
 
     @Inject(method = ["resize"], at = [At(value = "HEAD")])
